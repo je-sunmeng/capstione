@@ -2,21 +2,15 @@
 
 var os = require('os');
 var nodeStatic = require('node-static');
-var https = require('https');
+var http = require('http');
 var socketIO = require('socket.io');
-var fs = require('fs');
 
 var fileServer = new(nodeStatic.Server)();
-var options = {
-  key: fs.readFileSync("/home/ubuntu/capstone/server.key"),
-  cert: fs.readFileSync("/home/ubuntu/capstone/server.cert")
-};
-
-var server = https.createServer(options, function(req, res) {
+var app = http.createServer(function(req, res) {
   fileServer.serve(req, res);
 }).listen(8080);
 
-var io = socketIO.listen(server);
+var io = socketIO.listen(app);
 io.sockets.on('connection', function(socket) {
 
   // convenience function to log server messages on the client

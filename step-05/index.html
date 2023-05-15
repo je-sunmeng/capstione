@@ -40,6 +40,21 @@
       object-fit: cover;
       z-index: 0;
     }
+
+    #exit {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+
+      border: none;
+      border-radius: 16px;
+      background: royalblue;
+      color: white;
+      padding: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2;
+    }
   </style>
 
 </head>
@@ -50,6 +65,9 @@
     <video id="remoteVideo" autoplay playsinline></video>
     <audio id="remoteAudio" muted autoplay></audio>
   </div>
+    
+  <button id = "exit" onclick="window.location.href='https://www.naver.com/'">exit</button>
+
 
   <!-- This file is automatically added/served when running "node index.js". -->
   <script src="/socket.io/socket.io.js"></script>

@@ -8,10 +8,10 @@ var fs = require('fs');
 
 var fileServer = new(nodeStatic.Server)();
 var options = {
-  // key: fs.readFileSync("/home/ubuntu/capstone/server.key"),
-  // cert: fs.readFileSync("/home/ubuntu/capstone/server.cert")
-  key: fs.readFileSync("C:/Users/sunmeng/server.key"),
-  cert: fs.readFileSync("C:/Users/sunmeng/server.cert")
+  key: fs.readFileSync("/home/ubuntu/capstone/server.key"),
+  cert: fs.readFileSync("/home/ubuntu/capstone/server.cert")
+  // key: fs.readFileSync("C:/Users/sunmeng/server.key"),
+  // cert: fs.readFileSync("C:/Users/sunmeng/server.cert")
 };
 
 var server = https.createServer(options, function(req, res) {
